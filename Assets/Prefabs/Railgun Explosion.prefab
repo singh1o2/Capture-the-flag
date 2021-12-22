@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4935269359101666493}
   - component: {fileID: -1946673666988193017}
   - component: {fileID: -4647097839627688193}
+  - component: {fileID: -8923045517289624068}
   m_Layer: 0
   m_Name: Railgun Explosion
   m_TagString: Untagged
@@ -4910,3 +4911,15 @@ MonoBehaviour:
   showGizmos: 0
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+--- !u!114 &-8923045517289624068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935269359101666492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1dcf2c1c93b5c94884358b8b2c3b348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

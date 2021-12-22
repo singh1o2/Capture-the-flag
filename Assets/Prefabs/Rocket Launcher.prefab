@@ -132,6 +132,8 @@ MonoBehaviour:
   maxAmmo: 10
   ammo: 10
   coolDown: 2
+  weaponName: Rocket Launcher
+  coolDownTimer: 0
 --- !u!114 &1908611696170993435
 MonoBehaviour:
   m_ObjectHideFlags: 0

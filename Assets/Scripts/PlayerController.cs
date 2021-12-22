@@ -18,8 +18,8 @@ public class PlayerController : NetworkBehaviour
     
     public GameObject destination;
     public GameObject weapon;
-    private GameObject weaponInstance;
-    private GameObject weaponSlot;
+    public GameObject weaponInstance;
+    public GameObject weaponSlot;
 
     // Start is called before the first frame update
     void Start()

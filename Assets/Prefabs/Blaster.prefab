@@ -51,6 +51,8 @@ MonoBehaviour:
   maxAmmo: -1
   ammo: -1
   coolDown: 0.2
+  weaponName: Blaster
+  coolDownTimer: 0
 --- !u!114 &8206818103698972055
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,8 @@ public class Weapon : MonoBehaviour
     public int maxAmmo;
     public int ammo;
     public float coolDown;
-    protected float coolDownTimer;
+    public string weaponName;
+    public float coolDownTimer;
 
     void Start() {
         coolDownTimer = 0;

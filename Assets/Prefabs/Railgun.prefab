@@ -51,6 +51,8 @@ MonoBehaviour:
   maxAmmo: 3
   ammo: 3
   coolDown: 3
+  weaponName: Railgun
+  coolDownTimer: 0
 --- !u!114 &8350078523223251
 MonoBehaviour:
   m_ObjectHideFlags: 0
