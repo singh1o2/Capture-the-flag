@@ -1,2 +1,2 @@
-# project-group-18
+# PROJECT - GROUP 18
 
