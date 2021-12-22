@@ -1,2 +1,0 @@
-# PROJECT - GROUP 18
-
