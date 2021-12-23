@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242129510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.207, y: 1.344, z: 0.444}
+  m_LocalPosition: {x: 0.02, y: 1.344, z: 0.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8361744269242523165}
@@ -275,7 +275,9 @@ MonoBehaviour:
   height: 0
   health: 0
   destination: {fileID: 1242129510}
-  weapon: {fileID: 5764200160625652996, guid: 21d4f8457ce05cd43b0ed08284908af2, type: 3}
+  weapon: {fileID: 4240718561195962674, guid: 588bd566cf871a147b7fd362df103bf7, type: 3}
+  weaponInstance: {fileID: 0}
+  weaponSlot: {fileID: 0}
 --- !u!114 &1220652915335317265
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class PlayerController : NetworkBehaviour
 
         speed = 2;
 
-        health = 100f;
+        health = 500f;
         
       //  EquipWeapon(weapon);
     }
@@ -80,7 +80,11 @@ public class PlayerController : NetworkBehaviour
         {
             controller.Move(moveDirection * Time.deltaTime*speed);
         }
-        
+        if (weaponInstance != null && Input.GetMouseButton(0))
+        {
+            weaponInstance.GetComponent<Weapon>().Fire();
+        }
+
     }
     void FixedUpdate()
     {
@@ -113,7 +117,11 @@ public class PlayerController : NetworkBehaviour
         if (col.gameObject.tag == "Weapon Pickup")
         {
             if (col.gameObject.GetComponent<WeaponPickup>().e) {
-                EquipWeapon(col.gameObject.GetComponent<WeaponPickup>().weapon);
+                weapon = col.gameObject.GetComponent<WeaponPickup>().weapon;
+                if (isServer)
+                    RpcEquipWeapon();
+                else
+                    CmdEquipWeapon();
                 col.gameObject.GetComponent<WeaponPickup>().setEnabled(false);
             }
         }
@@ -121,6 +129,7 @@ public class PlayerController : NetworkBehaviour
         {
             if (col.gameObject.GetComponent<FlagPickUp>().e)
             {
+                Debug.Log("Hi");
                 col.gameObject.transform.SetParent(destination.transform);
                 col.gameObject.GetComponent<FlagPickUp>().setEnabled(false);
             }
@@ -138,16 +147,33 @@ public class PlayerController : NetworkBehaviour
                 col.gameObject.GetComponent<HealthPickup>().setEnabled(false);
             }
         }
+
+
     }
 
-
-    void EquipWeapon(GameObject w) {
-        weapon = w;
+    [ClientRpc]
+    void RpcEquipWeapon() {
         Destroy(weaponInstance);
         weaponInstance = Instantiate(weapon, parent.position, parent.rotation) as GameObject;
         Vector3 scale = weaponInstance.transform.localScale;
         weaponInstance.transform.SetParent(parent);
         weaponInstance.transform.localScale = scale;
+        Debug.Log(weaponInstance);
+        NetworkServer.Spawn(weaponInstance);
+    }
+
+    [Command]
+    void CmdEquipWeapon()
+    {
+        // weapon = w;
+        Destroy(weaponInstance);
+        weaponInstance = Instantiate(weapon, parent.position, parent.rotation) as GameObject;
+        Vector3 scale = weaponInstance.transform.localScale;
+        weaponInstance.transform.SetParent(parent);
+        weaponInstance.transform.localScale = scale;
+        Debug.Log(weaponInstance);
+        NetworkServer.Spawn(weaponInstance);
+        RpcEquipWeapon();
     }
 
     public void Damage(float d) {

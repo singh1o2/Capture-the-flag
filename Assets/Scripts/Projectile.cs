@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Projectile : MonoBehaviour
+using Mirror;
+public class Projectile : NetworkBehaviour
 {
 
     public float damage;
@@ -18,7 +18,6 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         destructionTime -= Time.deltaTime;
-
         if (destructionTime <= 0) {
             Destroy(gameObject);
         }

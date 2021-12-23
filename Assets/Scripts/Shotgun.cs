@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shotgun : Weapon
 {
     
-    protected override void Fire() {
+    public override void Fire() {
         if ((ammo > 0 || ammo == -1) && coolDownTimer == 0) {
             GameObject bulletInstance;
             for (float i = -0.25f; i <= 0.25f; i += 0.125f) {
